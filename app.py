@@ -39,16 +39,17 @@ def submit():
         temp = data["current"]["temp_c"]
         humidity = data["current"]["humidity"]
         condition = data["current"]["condition"]["text"]
-
+        icon = data["current"]["condition"]["icon"]
     
-        return f"""
-        <h2>weather report</h2>
-        You searched:{city}<br>
-        showing result for:{location}<br>
-        temperature:{temp}<br>
-        humidity:{humidity}<br>
-        condition:{condition}
-        <p><a class="link-opacity-100-hover" href="/">[ GO BACK ]</a></p>"""
+        return render_template(
+            "result.html",
+            city=city,
+            location=location,
+            temp=temp,
+            humidity=humidity,
+            condition=condition,
+            icon=icon
+        )
 
     
         

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Result</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="result-box">
+        <h1 class="result-title">Weather Report</h1>
+
+        <img class="weather-icon" src="https:{{ icon }}" alt="Weather Icon" />
+
+
+        <p class="city-name">{{ location }}</p>
+
+       <!-- <div class="weather-info">
+          <p class="info-item">You Searched: {{ city }}</p>
+
+          <p class="info-item">
+            Showing Results For:\ {{ location }}
+          </p>-->
+
+          <p class="info-item">Temperature:{{ temp }}°C</p>
+
+          <p class="info-item">Humidity:{{ humidity }}%</p>
+
+          <p class="info-item">Condition:{{ condition }}</p>
+        </div>
+
+        <a href="/" class="back-btn"> Search Another City </a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 from flask import Flask, render_template , request
 import requests
-import json
+
 
 
 from dotenv import load_dotenv
@@ -30,8 +30,7 @@ def submit():
 
     data = response.json()
     if "error" in data:
-        return f'''invalid city
-        <p><a class="back" href="/">[ GO BACK ]</a></p>'''
+        return render_template("error.html")
     elif response.status_code == 200:
         
     

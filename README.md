@@ -1,45 +1,61 @@
 # 🌦️ Weather App
 
-A simple and responsive weather application built with **Flask** that fetches real-time weather information using the **WeatherAPI**.
+A simple and responsive weather application built with **Flask** that provides real-time weather information using the **WeatherAPI**.
 
-Users can search for any city and instantly view its current temperature, humidity, weather condition, and weather icon.
+Users can search for any city and instantly view current weather details including temperature, humidity, weather condition, and weather icons.
+
+🔗 **Live Demo:** https://weather-app-88o6.onrender.com
 
 ---
 
 ## ✨ Features
 
-- 🔍 Search weather by city name
-- 🌡️ Current temperature in Celsius
-- 💧 Humidity information
-- ☁️ Live weather condition
-- 🌤️ Dynamic weather icons
-- ❌ Invalid city handling
-- 🎨 Simple and clean user interface
+* 🔍 Search weather by city name
+* 🌡️ Real-time temperature in Celsius
+* 💧 Humidity information
+* ☁️ Current weather condition
+* 🌤️ Dynamic weather icons
+* ❌ Invalid city error handling
+* 🎨 Clean and simple user interface
+* 🔐 Secure API key management using environment variables
 
 ---
 
 ## 📸 Screenshots
 
-### Home Page
+### 🏠 Home Page
 
 ![Home Page](screenshots/home.png)
 
-### Weather Report
+### 🌤️ Weather Report
 
 ![Weather Report](screenshots/result.png)
 
 ---
 
-## 🛠️ Built With
+## 🛠️ Tech Stack
 
-- Python
-- Flask
-- HTML5
-- CSS3
-- Jinja2
-- WeatherAPI
-- Requests
-- python-dotenv
+### Backend
+
+* 🐍 Python
+* 🌶️ Flask
+* 🔗 Requests
+* 🔑 python-dotenv
+
+### Frontend
+
+* HTML5
+* CSS3
+* Jinja2 Templates
+
+### API
+
+* 🌎 WeatherAPI
+
+### Deployment
+
+* 🚀 Render
+* 🐙 GitHub
 
 ---
 
@@ -53,7 +69,8 @@ weatherapp/
 │
 ├── templates/
 │   ├── index.html
-│   └── result.html
+│   ├── result.html
+│   └── error.html
 │
 ├── screenshots/
 │   ├── home.png
@@ -68,38 +85,51 @@ weatherapp/
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-### 1. Clone the repository
+Follow these steps to run the project locally.
+
+## 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/weatherapp.git
-cd weatherapp
+git clone https://github.com/vikassagar-creator/weather-app.git
+
+cd weather-app
 ```
 
-### 2. Create a virtual environment
+---
 
-**Windows**
+## 2. Create a Virtual Environment
+
+### Windows
 
 ```bash
 python -m venv env
+
 env\Scripts\activate
 ```
 
-**macOS / Linux**
+### macOS / Linux
 
 ```bash
 python3 -m venv env
+
 source env/bin/activate
 ```
 
-### 3. Install dependencies
+---
+
+## 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Create a `.env` file
+---
+
+## 4. Configure Environment Variables
+
+Create a `.env` file in the project root:
 
 ```env
 API_KEY=YOUR_WEATHERAPI_KEY
@@ -109,13 +139,17 @@ Get your free API key from:
 
 https://www.weatherapi.com/
 
-### 5. Run the application
+---
+
+## 5. Run the Application
+
+Start the Flask development server:
 
 ```bash
 python app.py
 ```
 
-Open your browser and visit:
+Open your browser:
 
 ```
 http://127.0.0.1:5000
@@ -123,33 +157,38 @@ http://127.0.0.1:5000
 
 ---
 
-## 📌 How It Works
+# 📌 How It Works
 
-1. Enter the name of any city.
-2. Click **Search Weather**.
-3. The application sends a request to the WeatherAPI.
-4. Current weather details are displayed, including:
-   - 📍 Location
-   - 🌡️ Temperature
-   - 💧 Humidity
-   - ☁️ Weather condition
-   - 🌤️ Weather icon
+1. User enters a city name.
+2. Flask receives the request.
+3. The application sends a request to WeatherAPI.
+4. Weather data is processed and displayed.
 
-If an invalid city is entered, the application displays an appropriate error message.
+The application displays:
+
+* 📍 Location
+* 🌡️ Temperature
+* 💧 Humidity
+* ☁️ Weather condition
+* 🌤️ Weather icon
+
+If the city does not exist, the application shows an error page.
 
 ---
 
-## 📦 Requirements
+# 📦 Dependencies
+
+Main packages used:
 
 ```text
 Flask
-Requests
+requests
 python-dotenv
 Jinja2
-Werkzeug
+gunicorn
 ```
 
-Install all dependencies with:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -157,26 +196,49 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Future Improvements
+# 🚀 Deployment
 
-- 📅 7-Day Weather Forecast
-- 📍 Detect User Location
-- 🌙 Dark Mode
-- 💨 Wind Speed & Pressure
-- 🌅 Sunrise & Sunset Details
-- 🌎 Search History
-- 📱 Improved Mobile Responsiveness
+This application is deployed using **Render**.
+
+Production server:
+
+```bash
+gunicorn app:app
+```
+
+The application automatically redeploys whenever changes are pushed to GitHub.
 
 ---
 
-## 👨‍💻 Author
+# 🔒 Security
+
+* API keys are stored using environment variables.
+* `.env` files are excluded using `.gitignore`.
+* Sensitive information is never committed to GitHub.
+
+---
+
+# 🔮 Future Improvements
+
+* 📅 7-day weather forecast
+* 📍 Automatic user location detection
+* 🌙 Dark mode support
+* 💨 Wind speed and pressure details
+* 🌅 Sunrise and sunset information
+* 🔎 Search history
+* 📱 Better mobile responsiveness
+
+---
+
+# 👨‍💻 Author
 
 **Vikas Sagar**
 
-GitHub: https://github.com/vikassagar-creator
+GitHub:
+https://github.com/vikassagar-creator
 
 ---
 
-## 📄 License
+# 📄 License
 
 This project is open source and available under the **MIT License**.

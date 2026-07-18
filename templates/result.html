@@ -15,23 +15,60 @@
       <div class="result-box">
         <h1 class="result-title">Weather Report</h1>
 
-        <img class="weather-icon" src="https:{{ icon }}" alt="Weather Icon" />
+        <img class="weather-icon" src="https:{{ weather.icon }}" alt="Weather Icon" />
+
+        <div class="weather-details">
+          <div class="detail-card">
+            
+            <strong>{{ weather.city or weather.region }}, {{ weather.country }}</strong>
+            <p class="localtime">{{ weather.localtime }}</p>
+          </div>
+          <div class="detail-card">
+            
+            <strong>{{ weather.temperature }}°C</strong>
+            <p class="condition">{{ weather.condition }}</p>
+          </div>
+
+          <div class="detail-card">
+            <span>🌡️ Feels Like</span>
+            <strong>{{ weather.feelslike }}°C</strong>
+          </div>
+
+          <div class="detail-card">
+            <span>💧 Humidity</span>
+            <strong>{{ weather.humidity }}%</strong>
+          </div>
+
+          <div class="detail-card">
+            <span>💨 Wind Speed</span>
+            <strong>{{ weather.wind_speed }} km/h</strong>
+          </div>
+
+          <div class="detail-card">
+            <span>🌡️ Pressure</span>
+            <strong>{{ weather.pressure }} mb</strong>
+          </div>
+
+          <div class="detail-card">
+            <span>🌫️ Visibility</span>
+            <strong>{{ weather.visibility }} km</strong>
+          </div>
+
+          <div class="detail-card">
+            <span>☀️ UV Index</span>
+            <strong>{{ weather.uv_index }}</strong>
+          </div>
+
+          <div class="detail-card">
+            <span>☁️ Cloud Cover</span>
+            <strong>{{ weather.cloud }}%</strong>
+          </div>
+        </div>
 
 
-        <p class="city-name">{{ location }}</p>
+     
 
-       <!-- <div class="weather-info">
-          <p class="info-item">You Searched: {{ city }}</p>
 
-          <p class="info-item">
-            Showing Results For:\ {{ location }}
-          </p>-->
-
-          <p class="info-item">Temperature: {{ temp }}°C</p>
-
-          <p class="info-item">Humidity: {{ humidity }}%</p>
-
-          <p class="info-item">Condition: {{ condition }}</p>
           
           <a href="/" class="back-btn"> Search Another City </a>
         </div>

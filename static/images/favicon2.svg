@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#3B82F6"/>
+
+  <!-- Sun -->
+  <g>
+    <circle cx="23" cy="23" r="10" fill="#FFD43B">
+      <animate
+        attributeName="opacity"
+        values="1;0;1"
+        dur="8s"
+        repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Rays -->
+    <g stroke="#FFD43B" stroke-width="2" stroke-linecap="round">
+      <line x1="23" y1="7" x2="23" y2="11"/>
+      <line x1="23" y1="35" x2="23" y2="39"/>
+      <line x1="7" y1="23" x2="11" y2="23"/>
+      <line x1="35" y1="23" x2="39" y2="23"/>
+    </g>
+  </g>
+
+
+  <!-- Moon -->
+  <path
+    d="M42 14
+       A10 10 0 1 0 52 30
+       A8 8 0 1 1 42 14Z"
+    fill="#F8FAFC">
+
+    <animate
+      attributeName="opacity"
+      values="0;1;0"
+      dur="8s"
+      repeatCount="indefinite"/>
+  </path>
+
+
+  <!-- Cloud -->
+  <path
+    d="M18 45
+       C18 37 25 32 33 32
+       C36 25 45 24 50 30
+       C57 30 60 35 60 41
+       C60 47 55 51 48 51
+       H20
+       C14 51 11 48 11 44
+       C11 40 14 37 18 37Z"
+    fill="white">
+
+    <!-- Floating animation -->
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="0 0;0 -2;0 0"
+      dur="3s"
+      repeatCount="indefinite"/>
+  </path>
+
+
+</svg>

@@ -1,2 +1,163 @@
 /* Home page styles */
 
+header{
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.navbar{
+    height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--primary);
+    display:flex;
+
+align-items:center;
+
+gap:10px;
+}
+
+nav{
+    display:flex;
+    gap:2rem;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    min-height:70vh;
+
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+
+}
+.hero-content h1{
+    font-size: 3.8rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+.hero-content p{
+    color:var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.hero-image {
+    flex: 1;
+}
+.hero-image img {
+    width: 100%;
+    max-width: 550px;
+    margin: auto;
+    transform:translateY(-20px);
+}
+
+.hero-content form{
+    display: flex;
+    gap: 15px;
+}
+.hero-content input{
+    flex: 1;
+    padding: 15px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-size: 16px;
+}
+button{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+}
+
+.hero-container{
+
+background:
+linear-gradient(
+180deg,
+#F8FAFC 0%,
+#EFF6FF 100%
+);
+
+border-radius:25px;
+}
+
+.footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Optional styling for columns inside the footer */
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer a {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.feature-card{
+    
+    box-shadow: #1a1a1a;
+
+border-radius: 30%;
+
+padding: 15px 20px;
+
+}
+.feature-card :hover{
+    animation-duration: 15ms;
+}
+
+.card-logo{
+    height: 50px;
+    width: 50px;
+    color: rgb(21, 232, 232);
+}

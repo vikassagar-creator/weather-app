@@ -1,57 +1,128 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WEATHER APP | FLASK</title>
-    <link
-rel="stylesheet"
-href="{{ url_for('static', filename='css/global.css') }}">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-rel="stylesheet"
-href="{{ url_for('static', filename='css/index.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
 
-<link
-rel="stylesheet"
-href="{{ url_for('static', filename='css/responsive.css') }}">
+  <title>WEATHER APP | FLASK</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 
 <body>
   <header>
-   <div class="container-navbar"> 
-   <div class="logo">
-    ☁ WeatherNow
+    <div class="container navbar">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-cloud-sun-icon lucide-cloud-sun">
+          <path d="M12 2v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="M20 12h2" />
+          <path d="m19.07 4.93-1.41 1.41" />
+          <path d="M15.947 12.65a4 4 0 0 0-5.925-4.128" />
+          <path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z" />
+        </svg>
+        WeatherNow
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="#">About</a>
+        <a href="https://github.com" target="_blank">Github</a>
+      </nav>
     </div>
-    <nav >
-      <a href="/">Home</a>
-      <a href="#">About</a>
-      <a href="https://github.com" target="_blank">Github</a>
-    </nav>
-   </div>
   </header>
+  <main>
+    <section class="container hero-container">
+      <div class="hero-content">
+        <h1>Real-Time Weather for Every City</h1>
+        <p>Get accurate and up-to-date weather information for any location around the world.</p>
+        <form action="/submit" method="post" class="search-form">
+          <input type="text" name="city" placeholder="Enter city name" required>
+          <button type="submit">Search Weather</button>
+        </form>
+        <p>Example: Hyderabad, London, New York</p>
+      </div>
+      <div class="hero-image">
 
-  <section class="hero-container">
-    <div class="hero-content">
-      <h1>Real-Time Weather Forecast</h1>
-      <p>Get accurate and up-to-date weather information for any location around the world.</p>
-      <form action="/submit" method="post">
-        <input type="text" name="city" placeholder="Enter city name" required>
-        <button type="submit">Search Weather</button>
-      </form>
+        <img src="{{ url_for('static', filename='images/hero.svg') }}" alt="Weather Illustration">
+
+      </div>
+    </section>
+
+    <section class="container features">
+      <div class="feature-card">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-cloud-sun-icon lucide-cloud-sun">
+            <path d="M12 2v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="M20 12h2" />
+            <path d="m19.07 4.93-1.41 1.41" />
+            <path d="M15.947 12.65a4 4 0 0 0-5.925-4.128" />
+            <path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z" />
+          </svg>
+          <h5>Live Weather</h5>
+          <p>Get real time weather updates instantly for any location</p>
+      </div>
+      <div class="feature-card">
+          <!--  <img 
+  src="{{ url_for('static', filename='images/globe.svg') }}"
+  alt="globe Icon"
+>-->
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-globe-icon lucide-globe">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+            <path d="M2 12h20" />
+          </svg>
+          <h5>
+            Worldwide Coverage
+          </h5>
+          <p>Search weather for over 1,000,000 cities worldwide</p>
+        
+      </div>
+
+      <div class="feature-card">
+        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-zap-icon lucide-zap">
+          <path
+            d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+        </svg>
+        <h5>
+          Fast & Reliable
+        </h5>
+        <p>Powered by WeatherAPI for fast and accurate data </p>
+
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+<section>
+    <div>
+      <p>
+        Source Code
+      </p>
+      <a href="https://github.com" target="_blank">Github</a>
+      
     </div>
-    <div class="hero-image">
-
-<img
-src="{{ url_for('static', filename='images/hero.svg') }}"
-alt="Weather Illustration">
+    <div>
+      <p>2026 WeatherNow |Built with Flask & WeatherAPI</p>
+    </div>
 
     </div>
-  </section>
+    </section>
+  </footer>
 </body>
+
 </html>

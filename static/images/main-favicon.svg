@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+<title>WeatherNow favicon</title>
+<circle cx="16" cy="16" r="16" fill="#2563EB"/>
+<g stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M13 8v1.3"/>
+<path d="M8.4 9.4l0.9 0.9"/>
+<path d="M18.4 9.4l-0.9 0.9"/>
+<circle cx="13" cy="13" r="3.4" fill="#FFFFFF" stroke="none"/>
+</g>
+<path d="M20 23H12a4.2 4.2 0 1 1 3.9-5.8H20a2.6 2.6 0 0 1 0 5.8Z" fill="#FFFFFF"/>
+</svg>

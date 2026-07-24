@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}WeatherNow{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    {% block extra_css %}{% endblock %}
+    
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/responsive.css') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container navbar">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 2v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="M20 12h2" />
+            <path d="m19.07 4.93-1.41 1.41" />
+            <path d="M15.947 12.65a4 4 0 0 0-5.925-4.128" />
+            <path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z" />
+          </svg>
+          WeatherNow
+        </div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="#">About</a>
+          <button
+            id="theme-btn"
+            class="theme-btn"
+            aria-label="Toggle dark mode"
+          >
+            🌙
+          </button>
+          <a
+            href="https://github.com/vikassagar-creator/weather-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-btn"
+            >Github</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 2v2" />
+              <path d="m4.93 4.93 1.41 1.41" />
+              <path d="M20 12h2" />
+              <path d="m19.07 4.93-1.41 1.41" />
+              <path d="M15.947 12.65a4 4 0 0 0-5.925-4.128" />
+              <path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z" />
+            </svg>
+            <span>WeatherNow</span>
+          </div>
+          <p class="footer-tagline">
+            Real-time weather for every city, powered by WeatherAPI.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Navigate</h4>
+          <a href="/">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <a
+            href="https://www.weatherapi.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WeatherAPI docs</a
+          >
+          <a
+            href="https://github.com/yourname/weather-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Source code</a
+          >
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a
+            href="https://github.com/yourname"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          <a
+            href="https://linkedin.com/in/yourname"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy;{{ current_year }} WeatherNow &middot; Built with Flask &amp;
+          WeatherAPI
+        </p>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>

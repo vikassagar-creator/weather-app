@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+
+  <defs>
+
+    <!-- Sun Glow -->
+    <radialGradient id="sunGlow">
+      <stop offset="0%" stop-color="#FFE066" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#FFD43B" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFD43B" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Cloud Gradient -->
+    <linearGradient id="cloud" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EDF2F7"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- Sun Glow -->
+  <circle cx="165" cy="120" r="80" fill="url(#sunGlow)"/>
+
+  <!-- Sun -->
+  <circle cx="165" cy="120" r="48" fill="#FFD43B"/>
+
+  <!-- Sun Rays -->
+  <g stroke="#FFD43B" stroke-width="5" stroke-linecap="round">
+    <line x1="165" y1="35" x2="165" y2="15"/>
+    <line x1="165" y1="205" x2="165" y2="225"/>
+    <line x1="80" y1="120" x2="60" y2="120"/>
+    <line x1="250" y1="120" x2="270" y2="120"/>
+
+    <line x1="110" y1="65" x2="95" y2="50"/>
+    <line x1="220" y1="175" x2="235" y2="190"/>
+
+    <line x1="110" y1="175" x2="95" y2="190"/>
+    <line x1="220" y1="65" x2="235" y2="50"/>
+  </g>
+
+  <!-- Cloud -->
+  <g>
+    <ellipse cx="260" cy="190" rx="55" ry="40" fill="url(#cloud)"/>
+    <ellipse cx="210" cy="205" rx="42" ry="33" fill="url(#cloud)"/>
+    <ellipse cx="315" cy="205" rx="45" ry="35" fill="url(#cloud)"/>
+
+    <rect
+      x="200"
+      y="185"
+      width="130"
+      height="45"
+      rx="22"
+      fill="url(#cloud)"
+    />
+
+    <!-- Shadow -->
+    <ellipse
+      cx="265"
+      cy="235"
+      rx="70"
+      ry="10"
+      fill="#D6DEE7"
+      opacity=".45"
+    />
+  </g>
+
+</svg>
